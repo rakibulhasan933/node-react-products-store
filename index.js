@@ -6,7 +6,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
@@ -81,7 +81,7 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-    res.send('Running CRUD server')
+    res.send('Running Market server')
 });
 app.listen(port, () => {
     console.log('Running server port', port);
